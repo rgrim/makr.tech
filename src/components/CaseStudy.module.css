@@ -1,0 +1,87 @@
+/* components/CaseStudy.module.css */
+.caseStudy {
+    background: linear-gradient(135deg, var(--mediterranean-blue), var(--deep-blue));
+    color: white;
+    border-radius: 25px;
+    padding: 5rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.caseStudy::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(244, 162, 89, 0.2), transparent);
+    border-radius: 50%;
+}
+
+.caseStudy h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.caseStudySubtitle {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    margin-bottom: 3rem;
+    color: var(--sun-gold);
+}
+
+.caseStudyContent {
+    display: grid;
+    gap: 2.5rem;
+}
+
+.caseSection {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 4px solid var(--sun-gold);
+}
+
+.caseSection h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--sun-gold);
+}
+
+.caseSection p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.caseResult {
+    background: rgba(244, 162, 89, 0.2);
+    border-left-color: var(--golden-yellow);
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.statItem {
+    flex: 1;
+    min-width: 150px;
+}
+
+.statNumber {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--sun-gold);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.statLabel {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}

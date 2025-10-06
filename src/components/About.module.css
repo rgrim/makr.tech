@@ -1,0 +1,56 @@
+/* components/About.module.css */
+.about {
+    padding: 5rem 1.5rem;
+}
+
+.about h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--mediterranean-blue);
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.aboutContent {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+}
+
+.aboutCard {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border-left: 4px solid var(--terracotta);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aboutCard:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+}
+
+.aboutCard p {
+    color: var(--text-light);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.aboutCard strong {
+    color: var(--mediterranean-blue);
+}
+
+.linkedinLink {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--mediterranean-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.linkedinLink:hover {
+    color: var(--terracotta);
+}

@@ -1,0 +1,81 @@
+/* app/blog/[slug]/Post.module.css */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem 4rem;
+  animation: fadeIn 1s ease-out;
+}
+
+.title {
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  color: var(--mediterranean-blue);
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.content {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+.content p {
+  margin-bottom: 1.5rem;
+}
+
+.content strong {
+  color: var(--terracotta);
+}
+.portableText h1, .portableText h2, .portableText h3 {
+  color: var(--mediterranean-blue);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.portableText h1 {
+  font-size: 2.5rem;
+}
+
+.portableText h2 {
+  font-size: 2rem;
+}
+
+.portableText h3 {
+  font-size: 1.5rem;
+}
+
+.portableText p {
+  margin-bottom: 1.5rem;
+}
+
+.portableText strong {
+  color: var(--mediterranean-blue);
+  font-weight: 600;
+}
+
+.portableText ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.portableText li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  list-style: disc;
+}
+
+.portableText li::marker {
+  color: var(--mediterranean-blue);
+}
+
+.portableText a {
+  color: var(--terracotta);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.portableText a:hover {
+  color: var(--warm-orange);
+}
+

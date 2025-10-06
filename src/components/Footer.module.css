@@ -1,0 +1,38 @@
+/* components/Footer.module.css */
+.footer {
+    background: var(--text-dark);
+    color: var(--soft-gray);
+    padding: 3rem 1.5rem 2rem;
+    text-align: center;
+}
+
+.footerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footerInfo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.footerSection h4 {
+    color: var(--sun-gold);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.footerSection p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.footerBottom {
+    border-top: 1px solid rgba(232, 228, 223, 0.1);
+    padding-top: 2rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}

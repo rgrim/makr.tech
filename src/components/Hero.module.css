@@ -1,0 +1,108 @@
+/* components/Hero.module.css */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 8rem;
+    position: relative;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, var(--sun-gold), var(--warm-orange));
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+    opacity: 0.1;
+    animation: morph 8s ease-in-out infinite;
+  }
+  
+  @keyframes morph {
+    0%, 100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; }
+    25% { border-radius: 48% 52% 36% 64% / 44% 60% 40% 56%; }
+    50% { border-radius: 38% 62% 58% 42% / 70% 33% 67% 30%; }
+    75% { border-radius: 58% 42% 48% 52% / 38% 62% 38% 62%; }
+  }
+  
+  .hero-eyebrow {
+    font-size: 1rem;
+    color: var(--terracotta);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1.2s ease-out 0.2s both;
+  }
+  
+  .hero h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 800;
+    color: var(--mediterranean-blue);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+    animation: fadeInUp 1.2s ease-out 0.4s both;
+  }
+  
+  .hero-highlight {
+    color: var(--terracotta);
+    position: relative;
+    display: inline-block;
+  }
+  
+  .hero p {
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    color: var(--text-light);
+    max-width: 700px;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+    animation: fadeInUp 1.2s ease-out 0.6s both;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, var(--terracotta), var(--warm-orange));
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(216, 67, 21, 0.3);
+    animation: fadeInUp 1.2s ease-out 0.9s both;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+  
+  .cta-button:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(216, 67, 21, 0.4);
+  }
+  
+  .cta-button span {
+    position: relative;
+    z-index: 1;
+  }

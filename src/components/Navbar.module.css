@@ -1,0 +1,64 @@
+/* components/Navbar.module.css */
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(250, 248, 245, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 1s ease-out;
+}
+
+.navContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--mediterranean-blue);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.navLinks {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.navLinks a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.navLinks a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--terracotta);
+    transition: width 0.3s ease;
+}
+
+.navLinks a:hover {
+    color: var(--terracotta);
+}
+
+.navLinks a:hover::after {
+    width: 100%;
+}

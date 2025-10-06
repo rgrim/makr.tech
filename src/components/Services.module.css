@@ -1,0 +1,104 @@
+/* components/Services.module.css */
+.services {
+    padding: 5rem 1.5rem;
+}
+
+.services h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--mediterranean-blue);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.servicesSubtitle {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.serviceCard {
+    background: white;
+    padding: 3rem 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-top: 4px solid transparent;
+}
+
+.serviceCard:nth-child(1) {
+    border-top-color: var(--mediterranean-blue);
+}
+
+.serviceCard:nth-child(2) {
+    border-top-color: var(--terracotta);
+}
+
+.serviceCard:nth-child(3) {
+    border-top-color: var(--olive-green);
+}
+
+.serviceCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.serviceNumber {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--soft-gray);
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.serviceCard h3 {
+    font-size: 1.6rem;
+    color: var(--mediterranean-blue);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--terracotta);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.serviceCard p {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+}
+
+.serviceFeatures {
+    list-style: none;
+    padding: 0;
+}
+
+.serviceFeatures li {
+    padding: 0.5rem 0;
+    color: var(--text-light);
+    display: flex;
+    align-items: start;
+    gap: 0.5rem;
+}
+
+.serviceFeatures li::before {
+    content: '→';
+    color: var(--terracotta);
+    font-weight: bold;
+}
