@@ -25,6 +25,7 @@ const Navbar = () => {
           <li><Link href="/#services">Services</Link></li>
           <li><Link href="/#case-study">Results</Link></li>
           <li><Link href="/#about">About</Link></li>
+          <li><Link href="/blog">Blog</Link></li>
           <li><Link href="/#contact">Contact</Link></li>
 
           {/* Futurs liens vers les pages dédiées */}
