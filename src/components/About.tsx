@@ -1,10 +1,20 @@
 // components/About.tsx
+import Image from 'next/image';
 import styles from './About.module.css';
 
 const About = () => {
   return (
     <section id="about" className={styles.about}>
       <h2>About Romain Grimmonpré</h2>
+      <div className={styles.aboutLayout}>
+      <Image
+        src="/photo_romain.jpg"
+        alt="Photo de Romain Grimmonpré"
+        width={1200}
+        height={800}
+        className={styles.aboutPhoto} // On ajoute une classe pour le style
+      />
+
       <div className={styles.aboutContent}>
         <div className={styles.aboutCard}>
           <p>
@@ -35,6 +45,7 @@ const About = () => {
           </a>
         </div>
       </div>
+    </div>  
     </section>
   );
 };

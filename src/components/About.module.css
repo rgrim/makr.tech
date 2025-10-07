@@ -10,12 +10,16 @@
     font-weight: 700;
     text-align: center;
 }
-
+.aboutLayout {
+    display: flex; /* La magie opère ici : active Flexbox */
+    align-items: center; /* Centre les éléments verticalement */
+    gap: 3rem; /* Espace entre la photo et le texte */
+  }
 .aboutContent {
     max-width: 800px;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
     display: grid;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .aboutCard {
@@ -41,7 +45,28 @@
 .aboutCard strong {
     color: var(--mediterranean-blue);
 }
+.aboutPhoto {
+      /* Dimensions et forme */
+  width: 220px;
+  height: 220px;
+  border-radius: 50%; /* Assure une forme parfaitement ronde */
+  object-fit: cover; /* Important : Garantit que votre photo remplit le cercle sans être déformée */
 
+  /* Style et intégration */
+  border: 5px solid var(--terracotta); /* Une bordure nette avec votre couleur d'accent */
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.15), 0 4px 15px rgba(0, 0, 0, 0.1); /* Une ombre plus douce et profonde */
+  
+  /* Placement (si vous utilisez Flexbox comme précédemment) */
+  flex-shrink: 0; 
+  
+  /* Interactivité */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  
+  }
+  .aboutPhoto:hover {
+    transform: scale(1.05) rotate(1deg); /* Un effet subtil au survol */
+    box-shadow: 0 15px 40px -5px rgba(216, 67, 21, 0.2), 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
 .linkedinLink {
     display: inline-block;
     margin-top: 1rem;
@@ -53,4 +78,16 @@
 
 .linkedinLink:hover {
     color: var(--terracotta);
+}
+
+@media (max-width: 768px) {
+    .aboutLayout {
+      flex-direction: column; /* On repasse en colonne sur les petits écrans */
+      gap: 2rem;
+    }
+    
+    .aboutPhoto {
+       width: 150px; /* On peut la réduire un peu sur mobile */
+       height: 150px;
+    }
 }
