@@ -47,9 +47,9 @@
 }
 .aboutPhoto {
       /* Dimensions et forme */
-  width: 220px;
-  height: 220px;
-  border-radius: 50%; /* Assure une forme parfaitement ronde */
+  width: 520px;
+  height: auto;
+  /*border-radius: 50%; /* Assure une forme parfaitement ronde */
   object-fit: cover; /* Important : Garantit que votre photo remplit le cercle sans être déformée */
 
   /* Style et intégration */
@@ -63,6 +63,9 @@
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   
   }
+
+.desktopOnly { display: block; }
+.mobileOnly { display: none; }
   .aboutPhoto:hover {
     transform: scale(1.05) rotate(1deg); /* Un effet subtil au survol */
     box-shadow: 0 15px 40px -5px rgba(216, 67, 21, 0.2), 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -90,4 +93,6 @@
        width: 150px; /* On peut la réduire un peu sur mobile */
        height: 150px;
     }
+    .desktopOnly { display: none; }
+    .mobileOnly { display: block; }
 }

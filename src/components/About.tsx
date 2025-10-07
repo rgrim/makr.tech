@@ -10,12 +10,22 @@ const About = () => {
     <section id="about" className={styles.about}>
       <h2>{t.about.title}</h2>
       <div className={styles.aboutLayout}>
+      {/* Desktop image */}
       <Image
-        src="/photo_romain.jpg"
+        src="/montageRomain.png"
         alt={t.about.photoAlt}
         width={1200}
         height={800}
-        className={styles.aboutPhoto} // On ajoute une classe pour le style
+        className={`${styles.aboutPhoto} ${styles.desktopOnly}`}
+      />
+      {/* Mobile image */}
+      <Image
+        src="/photo_romain.jpg"
+        alt={t.about.photoAlt}
+        width={600}
+        height={600}
+        className={`${styles.aboutPhoto} ${styles.mobileOnly}`}
+        priority
       />
 
       <div className={styles.aboutContent}>
