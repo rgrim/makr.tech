@@ -20,7 +20,7 @@ const Services = () => {
             <li>Bottleneck identification & optimization design</li>
             <li>Technical recommendations & architecture sketch</li>
             <li>ROI projection & implementation roadmap</li>
-            <li>Deliverable: Your "Transformation Blueprint"</li>
+            <li>Deliverable: Your &quotTransformation Blueprint&quot</li>
           </ul>
         </div>
 

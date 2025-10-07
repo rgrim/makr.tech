@@ -1,11 +1,12 @@
 // app/blog/[slug]/page.tsx
 import { client } from '../../../../sanity/lib/client';
 import { PortableText, PortableTextComponents } from '@portabletext/react'; // Importez le composant
+import type { PortableTextBlock } from '@portabletext/types';
 import styles from './Post.module.css';
 
 interface Post {
   title: string;
-  body: any[]; // Le type du body est complexe, "any[]" suffit pour l'instant
+  body: PortableTextBlock[];
 }
 
 // Fonction pour récupérer UN seul article basé sur son slug
@@ -49,8 +50,9 @@ const ptComponents: PortableTextComponents = {
     }
   }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = await getPost(params.slug);
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = await getPost(slug);
 
   return (
     <article className={styles.container}>

@@ -13,12 +13,12 @@ const Navbar = () => {
         </Link>
         <ul className={styles.navLinks}>
           {/* Liens qui font défiler la page d'accueil */}
-          <li><a href="/#home">Home</a></li>
-          <li><a href="/#approach">Approach</a></li>
-          <li><a href="/#services">Services</a></li>
-          <li><a href="/#case-study">Results</a></li>
-          <li><a href="/#about">About</a></li>
-          <li><a href="/#contact">Contact</a></li>
+          <li><Link href="/#home">Home</Link></li>
+          <li><Link href="/#approach">Approach</Link></li>
+          <li><Link href="/#services">Services</Link></li>
+          <li><Link href="/#case-study">Results</Link></li>
+          <li><Link href="/#about">About</Link></li>
+          <li><Link href="/#contact">Contact</Link></li>
 
           {/* Futurs liens vers les pages dédiées */}
           {/* <li><Link href="/blog">Blog</Link></li> */}

@@ -34,7 +34,7 @@ export default async function BlogIndexPage() {
     <div className={styles.container}>
       <h1 className={styles.title}>Le Blog Makr.tech</h1>
       <p className={styles.subtitle}>
-        Réflexions sur la technologie, la stratégie d'entreprise et la résolution de problèmes complexes.
+        Réflexions sur la technologie, la stratégie d&aposentreprise et la résolution de problèmes complexes.
       </p>
 
       <div className={styles.postsGrid}>
