@@ -8,7 +8,7 @@ const Footer = () => {
         <div className={styles.footerInfo}>
           <div className={styles.footerSection}>
             <h4>Company</h4>
-            <p><strong>Makr.tech</strong></p>
+            <p><strong>Makr bv</strong></p>
             <p>Business Transformation Architecture</p>
           </div>
           <div className={styles.footerSection}>

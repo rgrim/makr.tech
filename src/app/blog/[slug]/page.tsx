@@ -1,5 +1,6 @@
 // app/blog/[slug]/page.tsx
 import { client } from '../../../../sanity/lib/client';
+import Image from 'next/image';
 import { PortableText, PortableTextComponents } from '@portabletext/react'; // Importez le composant
 import type { PortableTextBlock } from '@portabletext/types';
 import styles from './Post.module.css';
@@ -7,13 +8,17 @@ import styles from './Post.module.css';
 interface Post {
   title: string;
   body: PortableTextBlock[];
+  mainImage: {
+    url: string;
+  };
 }
 
 // Fonction pour récupérer UN seul article basé sur son slug
 async function getPost(slug: string) {
   const query = `*[_type == "post" && slug.current == $slug][0] {
     title,
-    body
+    body,
+    "mainImage": image.asset->{url}
   }`;
   const post = await client.fetch<Post>(query, { slug }); // On passe le slug en paramètre
   return post;
@@ -56,6 +61,19 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <article className={styles.container}>
+
+{post.mainImage?.url && (
+        <div className={styles.mainImageContainer}>
+          <Image
+            src={post.mainImage.url}
+            alt={`Image principale pour ${post.title}`}
+            fill={true}
+            className={styles.mainImage}
+            priority // L'image principale doit se charger rapidement
+          />
+        </div>
+      )}
+
       <h1 className={styles.title}>{post.title}</h1>
       <div className={styles.portableText}>
         {/* Le composant PortableText sait comment afficher le contenu de Sanity */}

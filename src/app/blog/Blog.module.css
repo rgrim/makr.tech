@@ -5,7 +5,70 @@
     padding: 6rem 1.5rem 4rem;
     animation: fadeIn 1s ease-out;
 }
-
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 8rem;
+    position: relative;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, var(--sun-gold), var(--warm-orange));
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+    opacity: 0.1;
+    animation: morph 8s ease-in-out infinite;
+  }
+  
+  @keyframes morph {
+    0%, 100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; }
+    25% { border-radius: 48% 52% 36% 64% / 44% 60% 40% 56%; }
+    50% { border-radius: 38% 62% 58% 42% / 70% 33% 67% 30%; }
+    75% { border-radius: 58% 42% 48% 52% / 38% 62% 38% 62%; }
+  }
+  
+  
+  
+  .hero h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 800;
+    color: var(--mediterranean-blue);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+    animation: fadeInUp 1.2s ease-out 0.4s both;
+  }
+  .heroEyebrow {
+    font-size: 1rem;
+    color: var(--terracotta);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1.2s ease-out 0.2s both;
+  }
+  
+  .heroHighlight {
+    color: var(--terracotta);
+    position: relative;
+    display: inline-block;
+  }
+  .hero p {
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    color: var(--text-light);
+    max-width: 700px;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+    animation: fadeInUp 1.2s ease-out 0.6s both;
+  }
 .title {
     font-size: clamp(2.5rem, 7vw, 4rem);
     color: var(--mediterranean-blue);
@@ -30,14 +93,13 @@
 
 .postCard {
     display: block;
-    padding: 2rem;
     background: white;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.07);
     text-decoration: none;
     color: inherit;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 4px solid var(--terracotta);
+    overflow: hidden; /* Important pour que l'image ne dépasse pas les coins arrondis */
 }
 
 .postCard:hover {
@@ -45,13 +107,28 @@
     box-shadow: 0 8px 30px rgba(0,0,0,0.12);
 }
 
-.postCard h2 {
+.imageContainer {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Force un format 16:9 pour toutes les images */
+}
+
+.postImage {
+    object-fit: cover; /* Assure que l'image couvre tout l'espace sans se déformer */
+}
+
+.cardContent {
+    padding: 2rem;
+    border-top: 4px solid var(--terracotta);
+}
+
+.cardContent h2 {
     font-size: 1.75rem;
     color: var(--mediterranean-blue);
     margin-bottom: 0.75rem;
 }
 
-.postCard p {
+.cardContent p {
     color: var(--text-light);
     line-height: 1.7;
 }
