@@ -3,9 +3,11 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
 import styles from './Navbar.module.css'; // On importe nos styles
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <nav className={styles.nav}>
       <div className={styles.navContainer}>
@@ -18,6 +20,19 @@ const Navbar = () => {
             priority // Indique à Next.js de charger cette image en priorité
           />
         </Link>
+        <button
+          type="button"
+          className={styles.menuButton}
+          aria-label="Open main menu"
+          aria-controls="primary-navigation"
+          aria-expanded={isMenuOpen}
+          onClick={() => setIsMenuOpen((open) => !open)}
+        >
+          <span className={styles.menuBar} />
+          <span className={styles.menuBar} />
+          <span className={styles.menuBar} />
+        </button>
+
         <ul className={styles.navLinks}>
           {/* Liens qui font défiler la page d'accueil */}
           <li><Link href="/#home">Home</Link></li>
@@ -31,6 +46,24 @@ const Navbar = () => {
           {/* Futurs liens vers les pages dédiées */}
           {/* <li><Link href="/blog">Blog</Link></li> */}
         </ul>
+        
+        <div
+          id="primary-navigation"
+          className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ''}`}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile navigation"
+        >
+          <ul>
+            <li><Link href="/#home" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+            <li><Link href="/#approach" onClick={() => setIsMenuOpen(false)}>Approach</Link></li>
+            <li><Link href="/#services" onClick={() => setIsMenuOpen(false)}>Services</Link></li>
+            <li><Link href="/#case-study" onClick={() => setIsMenuOpen(false)}>Results</Link></li>
+            <li><Link href="/#about" onClick={() => setIsMenuOpen(false)}>About</Link></li>
+            <li><Link href="/blog" onClick={() => setIsMenuOpen(false)}>Blog</Link></li>
+            <li><Link href="/#contact" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
+          </ul>
+        </div>
       </div>
     </nav>
   );
