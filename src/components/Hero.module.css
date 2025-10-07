@@ -29,7 +29,7 @@
     75% { border-radius: 58% 42% 48% 52% / 38% 62% 38% 62%; }
   }
   
-  .hero-eyebrow {
+  .heroEyebrow {
     font-size: 1rem;
     color: var(--terracotta);
     font-weight: 600;
@@ -49,7 +49,7 @@
     animation: fadeInUp 1.2s ease-out 0.4s both;
   }
   
-  .hero-highlight {
+  .heroHighlight {
     color: var(--terracotta);
     position: relative;
     display: inline-block;
@@ -64,7 +64,7 @@
     animation: fadeInUp 1.2s ease-out 0.6s both;
   }
   
-  .cta-button {
+  .ctaButton {
     display: inline-block;
     padding: 1rem 2.5rem;
     background: linear-gradient(135deg, var(--terracotta), var(--warm-orange));
@@ -79,7 +79,7 @@
     overflow: hidden;
   }
   
-  .cta-button::before {
+  .ctaButton::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -92,17 +92,17 @@
     transition: width 0.6s, height 0.6s;
   }
   
-  .cta-button:hover::before {
+  .ctaButton:hover::before {
     width: 300px;
     height: 300px;
   }
   
-  .cta-button:hover {
+  .ctaButton:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 25px rgba(216, 67, 21, 0.4);
   }
   
-  .cta-button span {
+  .ctaButton span {
     position: relative;
     z-index: 1;
   }
