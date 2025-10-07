@@ -130,3 +130,23 @@
     }
     .mobileMenu.open { display: block; }
 }
+
+/* Language switcher */
+.langSwitcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 1rem;
+}
+.langSwitcher button {
+    background: transparent;
+    border: 1px solid rgba(0,0,0,0.15);
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.langActive {
+    background: var(--terracotta);
+    color: white;
+    border-color: var(--terracotta);
+}

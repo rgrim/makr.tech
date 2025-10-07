@@ -1,33 +1,30 @@
 // components/Approach.tsx
+'use client';
 import styles from './Approach.module.css';
+import { useI18n } from '@/i18n/LanguageProvider';
 
 const Approach = () => {
+  const { t } = useI18n();
   return (
     <section id="approach" className={styles.valuePillars}>
-      <h2>My Three-Pillar Approach</h2>
+      <h2>{t.approach.title}</h2>
       <div className={styles.pillarsGrid}>
         <div className={styles.pillarCard}>
           <div className={styles.pillarIcon}>🎯</div>
-          <h3>Strategic Problem Solving</h3>
-          <p>
-            I don&apos;t just take orders. I&apos;m the person called into complex meetings to find clarity. I optimize business processes before writing a single line of code, ensuring we solve the right problem, not just the obvious one.
-          </p>
+          <h3>{t.approach.p1Title}</h3>
+          <p>{t.approach.p1Text}</p>
         </div>
 
         <div className={styles.pillarCard}>
           <div className={styles.pillarIcon}>⚡</div>
-          <h3>Rapid & Robust Execution</h3>
-          <p>
-            Using Low-Code (Mendix) and AI as my unfair advantage, I build solutions faster and smarter than traditional methods. Solid software architecture that scales with your business ambitions.
-          </p>
+          <h3>{t.approach.p2Title}</h3>
+          <p>{t.approach.p2Text}</p>
         </div>
 
         <div className={styles.pillarCard}>
           <div className={styles.pillarIcon}>👥</div>
-          <h3>People-Centric Empowerment</h3>
-          <p>
-            I don&apos;t just build software, I build consensus. Through coaching, knowledge transfer, and inclusive leadership, I ensure your team adopts, owns, and evolves the solutions we create together.
-          </p>
+          <h3>{t.approach.p3Title}</h3>
+          <p>{t.approach.p3Text}</p>
         </div>
       </div>
     </section>

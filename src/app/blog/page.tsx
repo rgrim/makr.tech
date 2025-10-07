@@ -5,6 +5,7 @@ import { client } from '../../../sanity/lib/client'; // Importez le client
 import { urlForImage } from '../../../sanity/lib/image';
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import styles from './Blog.module.css';
+import BlogHeading from './BlogHeading';
 
 // Définissons le type de données que nous attendons de Sanity
 interface Post {
@@ -42,10 +43,7 @@ export default async function BlogIndexPage() {
   return (
     <div className={styles.container}>
     <div className={styles.hero}>
-      <h1 className={styles.heroHighlight}>Le Blog Makr.tech</h1>
-      <p>
-        Réflexions sur la technologie, la stratégie d&aposentreprise et la résolution de problèmes complexes.
-      </p>
+      <BlogHeading />
     </div>
     <div >
       <div className={styles.postsGrid}>

@@ -1,13 +1,14 @@
 // components/Contact.tsx
+'use client';
 import styles from './Contact.module.css';
+import { useI18n } from '@/i18n/LanguageProvider';
 
 const Contact = () => {
+  const { t } = useI18n();
   return (
     <section id="contact" className={styles.contact}>
-      <h2>Ready to Transform Your Digital Future?</h2>
-      <p>
-        Let&apos;s have an honest conversation about your challenges. No sales pitch—just strategic thinking and a clear path forward. I&apos;ll tell you if I&apos;m the right fit, and together we&apos;ll decide on the best approach.
-      </p>
+      <h2>{t.contact.title}</h2>
+      <p>{t.contact.text}</p>
       <a href="mailto:romain.grimmonpre@makr.tech" className={styles.contactEmail}>
         romain.grimmonpre@makr.tech
       </a>

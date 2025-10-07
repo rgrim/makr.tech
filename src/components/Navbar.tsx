@@ -5,9 +5,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import styles from './Navbar.module.css'; // On importe nos styles
+import { useI18n } from '@/i18n/LanguageProvider';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t, locale, setLocale } = useI18n();
   return (
     <nav className={styles.nav}>
       <div className={styles.navContainer}>
@@ -35,13 +37,13 @@ const Navbar = () => {
 
         <ul className={styles.navLinks}>
           {/* Liens qui font défiler la page d'accueil */}
-          <li><Link href="/#home">Home</Link></li>
-          <li><Link href="/#approach">Approach</Link></li>
-          <li><Link href="/#services">Services</Link></li>
-          <li><Link href="/#case-study">Results</Link></li>
-          <li><Link href="/#about">About</Link></li>
-          <li><Link href="/blog">Blog</Link></li>
-          <li><Link href="/#contact">Contact</Link></li>
+          <li><Link href="/#home">{t.nav.home}</Link></li>
+          <li><Link href="/#approach">{t.nav.approach}</Link></li>
+          <li><Link href="/#services">{t.nav.services}</Link></li>
+          <li><Link href="/#case-study">{t.nav.results}</Link></li>
+          <li><Link href="/#about">{t.nav.about}</Link></li>
+          <li><Link href="/blog">{t.nav.blog}</Link></li>
+          <li><Link href="/#contact">{t.nav.contact}</Link></li>
 
           {/* Futurs liens vers les pages dédiées */}
           {/* <li><Link href="/blog">Blog</Link></li> */}
@@ -55,14 +57,36 @@ const Navbar = () => {
           aria-label="Mobile navigation"
         >
           <ul>
-            <li><Link href="/#home" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
-            <li><Link href="/#approach" onClick={() => setIsMenuOpen(false)}>Approach</Link></li>
-            <li><Link href="/#services" onClick={() => setIsMenuOpen(false)}>Services</Link></li>
-            <li><Link href="/#case-study" onClick={() => setIsMenuOpen(false)}>Results</Link></li>
-            <li><Link href="/#about" onClick={() => setIsMenuOpen(false)}>About</Link></li>
-            <li><Link href="/blog" onClick={() => setIsMenuOpen(false)}>Blog</Link></li>
-            <li><Link href="/#contact" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
+            <li><Link href="/#home" onClick={() => setIsMenuOpen(false)}>{t.nav.home}</Link></li>
+            <li><Link href="/#approach" onClick={() => setIsMenuOpen(false)}>{t.nav.approach}</Link></li>
+            <li><Link href="/#services" onClick={() => setIsMenuOpen(false)}>{t.nav.services}</Link></li>
+            <li><Link href="/#case-study" onClick={() => setIsMenuOpen(false)}>{t.nav.results}</Link></li>
+            <li><Link href="/#about" onClick={() => setIsMenuOpen(false)}>{t.nav.about}</Link></li>
+            <li><Link href="/blog" onClick={() => setIsMenuOpen(false)}>{t.nav.blog}</Link></li>
+            <li><Link href="/#contact" onClick={() => setIsMenuOpen(false)}>{t.nav.contact}</Link></li>
           </ul>
+        </div>
+        
+        {/* Language switcher */}
+        <div className={styles.langSwitcher}>
+          <button
+            type="button"
+            onClick={() => setLocale('en')}
+            aria-pressed={locale === 'en'}
+            className={locale === 'en' ? styles.langActive : ''}
+          >EN</button>
+          <button
+            type="button"
+            onClick={() => setLocale('fr')}
+            aria-pressed={locale === 'fr'}
+            className={locale === 'fr' ? styles.langActive : ''}
+          >FR</button>
+          <button
+            type="button"
+            onClick={() => setLocale('nl')}
+            aria-pressed={locale === 'nl'}
+            className={locale === 'nl' ? styles.langActive : ''}
+          >NL</button>
         </div>
       </div>
     </nav>

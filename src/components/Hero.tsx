@@ -1,20 +1,22 @@
 // components/Hero.tsx
+'use client';
 import styles from './Hero.module.css';
+import { useI18n } from '@/i18n/LanguageProvider';
 
 const Hero = () => {
+  const { t } = useI18n();
   return (
     <section id="home" className={styles.hero}>
-      <div className={styles.heroEyebrow}>Business Transformation Architect</div>
+      <div className={styles.heroEyebrow}>{t.hero.eyebrow}</div>
       <h1>
-        <span className={styles.heroHighlight}>Clarity</span> in Complexity.<br />
-        From Business Process<br />
-        to Digital Product.
+        <span className={styles.heroHighlight}>{t.hero.highlight}</span> {t.hero.line2}<br />
+        {t.hero.line3}
       </h1>
       <p>
-        I translate complex business challenges into simple, scalable, and rapidly-deployed digital solutions. Strategic thinking meets technical execution.
+        {t.hero.sub}
       </p>
       <a href="#contact" className={styles.ctaButton}>
-        <span>Start Your Transformation</span>
+        <span>{t.hero.cta}</span>
       </a>
     </section>
   );
