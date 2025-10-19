@@ -29,6 +29,17 @@ body {
   color: var(--text-dark);
   background: var(--warm-white);
   overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Prevent horizontal overflow globally */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 /* Stunning entrance animation */
@@ -82,15 +93,15 @@ body {
       opacity: 0.15;
   }
   25% {
-      transform: translate(40px, -60px) scale(1.2);
+      transform: translate(20px, -30px) scale(1.1);
       opacity: 0.25;
   }
   50% {
-      transform: translate(-30px, 40px) scale(0.8);
+      transform: translate(-15px, 20px) scale(0.9);
       opacity: 0.1;
   }
   75% {
-      transform: translate(50px, 20px) scale(1.1);
+      transform: translate(25px, 10px) scale(1.05);
       opacity: 0.2;
   }
 }
@@ -114,7 +125,7 @@ body {
 
 .gaudi-curve-1 {
   top: 10%;
-  left: -10%;
+  left: -5%;
   width: 300px;
   height: 300px;
   background: radial-gradient(circle, var(--mediterranean-blue), transparent);
@@ -123,7 +134,7 @@ body {
 
 .gaudi-curve-2 {
   top: 50%;
-  right: -15%;
+  right: -5%;
   width: 400px;
   height: 400px;
   background: radial-gradient(circle, var(--terracotta), transparent);
@@ -141,9 +152,9 @@ body {
 
 @keyframes float {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(30px, -30px) scale(1.1); }
-  50% { transform: translate(-20px, 20px) scale(0.9); }
-  75% { transform: translate(40px, 10px) scale(1.05); }
+  25% { transform: translate(15px, -15px) scale(1.05); }
+  50% { transform: translate(-10px, 10px) scale(0.95); }
+  75% { transform: translate(20px, 5px) scale(1.02); }
 }
 
 /* Navigation */
@@ -415,18 +426,13 @@ section {
   font-size: 1.05rem;
 }
 
-/* Mosaic divider */
+/* Professional divider */
 .mosaic-divider {
-  height: 4px;
-  background: linear-gradient(90deg, 
-      var(--mediterranean-blue) 0%, 
-      var(--mosaic-teal) 25%, 
-      var(--sun-gold) 50%, 
-      var(--terracotta) 75%, 
-      var(--mosaic-purple) 100%);
+  height: 2px;
+  background: var(--soft-gray);
   margin: 4rem 0;
-  border-radius: 2px;
-  opacity: 0.3;
+  border-radius: 1px;
+  opacity: 0.6;
 }
 
 /* Services Section */
@@ -809,6 +815,25 @@ footer {
   .stats {
       flex-direction: column;
       gap: 1.5rem;
+  }
+
+  /* Fix background elements on mobile */
+  .gaudi-curve-1 {
+      left: -2%;
+      width: 200px;
+      height: 200px;
+  }
+
+  .gaudi-curve-2 {
+      right: -2%;
+      width: 250px;
+      height: 250px;
+  }
+
+  .gaudi-curve-3 {
+      left: 15%;
+      width: 180px;
+      height: 180px;
   }
 }
 
