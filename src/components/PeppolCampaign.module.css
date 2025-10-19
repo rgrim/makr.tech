@@ -95,26 +95,27 @@
   }
   
   .campaignContent {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.8rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: nowrap;
   }
   
   .campaignText {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.8rem;
-    font-size: 0.95rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
   }
   
   .urgencyBadge {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.6rem;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
   }
   
   .ctaLink {
-    font-size: 0.85rem;
-    padding: 0.25rem 0.6rem;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
   }
 }
 
@@ -124,6 +125,17 @@
   }
   
   .campaignText {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    gap: 0.4rem;
+  }
+  
+  .urgencyBadge {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.4rem;
+  }
+  
+  .ctaLink {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.4rem;
   }
 }
