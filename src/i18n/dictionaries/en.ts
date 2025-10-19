@@ -102,6 +102,80 @@ export type Translations = {
     highlight: string;
     ctaText: string;
   };
+  peppol: {
+    heroEyebrow: string;
+    heroTitle1: string;
+    heroTitle2: string;
+    heroTitle3: string;
+    heroDescription: string;
+    heroCta: string;
+    urgencyTitle: string;
+    urgencyText: string;
+    risksTitle: string;
+    risk1: string;
+    risk2: string;
+    statisticsText: string;
+    servicesTitle: string;
+    servicesIntro: string;
+    service1Title: string;
+    service1Subtitle: string;
+    service1Text: string;
+    service2Title: string;
+    service2Subtitle: string;
+    service2Text: string;
+    service3Title: string;
+    service3Subtitle: string;
+    service3Text: string;
+    service4Title: string;
+    service4Subtitle: string;
+    service4Text: string;
+    benefitsTitle: string;
+    benefitsIntro: string;
+    benefit1Title: string;
+    benefit1Text: string;
+    benefit2Title: string;
+    benefit2Text: string;
+    benefit3Title: string;
+    benefit3Text: string;
+    benefit4Title: string;
+    benefit4Text: string;
+    ctaTitle: string;
+    ctaDescription: string;
+    ctaBenefitsTitle: string;
+    ctaBenefit1: string;
+    ctaBenefit2: string;
+    ctaNote: string;
+    ctaButton: string;
+    faqTitle: string;
+    faq1Question: string;
+    faq1Answer: string;
+    faq2Question: string;
+    faq2Answer: string;
+    faq3Question: string;
+    faq3Answer: string;
+    faq4Question: string;
+    faq4Answer: string;
+  };
+  contactForm: {
+    title: string;
+    description: string;
+    nameLabel: string;
+    namePlaceholder: string;
+    emailLabel: string;
+    emailPlaceholder: string;
+    companyLabel: string;
+    companyPlaceholder: string;
+    phoneLabel: string;
+    phonePlaceholder: string;
+    messageLabel: string;
+    messagePlaceholder: string;
+    required: string;
+    submitLoading: string;
+    submitButton: string;
+    successMessage: string;
+    errorMessage: string;
+    connectionError: string;
+  };
 };
 
 export const en: Translations = {
@@ -207,6 +281,80 @@ export const en: Translations = {
     mainText: 'mandatory from January 1st, 2026.',
     highlight: 'Electronic Invoicing Peppol',
     ctaText: 'Discover my support',
+  },
+  peppol: {
+    heroEyebrow: 'Electronic Invoicing 2026',
+    heroTitle1: 'Be Ready',
+    heroTitle2: ', Stress-Free.',
+    heroTitle3: 'Simplified Peppol transition',
+    heroDescription: 'As of January 1st, 2026, structured electronic invoicing becomes mandatory in Belgium for all B2B companies. Don\'t let this complex deadline become an obstacle. I guide you through a simple, compliant, and advantageous transition.',
+    heroCta: 'Book your free 30-minute diagnostic',
+    urgencyTitle: 'January 1st, 2026, Everything Changes. Are You Affected?',
+    urgencyText: 'The new law requires all VAT-registered companies to issue and receive invoices via the secure Peppol network, in UBL format. Ignoring this transition is not an option.',
+    risksTitle: 'The risks in case of non-compliance are significant:',
+    risk1: 'Fixed Fines: Up to €5,000 in case of repeated violations.',
+    risk2: 'VAT Deduction Refusal: A direct and major impact on your cash flow.',
+    statisticsText: 'Don\'t be part of the statistics. Currently, more than 50% of Belgian SMEs are not yet ready, and this figure reaches 64% in the construction sector in Wallonia. Don\'t wait until the last moment.',
+    servicesTitle: 'Your Transition, Guided from A to Z',
+    servicesIntro: 'I offer you customized support to navigate this reform with complete peace of mind. My service is structured around 4 key steps to guarantee your compliance and optimize your processes.',
+    service1Title: 'Complete Audit and Diagnosis',
+    service1Subtitle: 'Personalized assessment',
+    service1Text: 'We start with an assessment of your current systems. I analyze your accounting software, your billing volumes and your internal processes to define a personalized action plan.',
+    service2Title: 'Selection and Implementation of the Ideal Solution',
+    service2Subtitle: 'Complete technical integration',
+    service2Text: 'The market offers many solutions (Odoo, Billit, Trustup Pro, etc.). I help you choose the tool best suited to your needs and budget, then I manage its technical integration with your existing systems and the Peppol network.',
+    service3Title: 'Training Your Teams',
+    service3Subtitle: 'Guaranteed adoption',
+    service3Text: 'The success of the transition depends on its adoption by your collaborators. I organize practical training sessions to guarantee rapid and effective mastery of the new system.',
+    service4Title: 'Optimization and Continuous Compliance',
+    service4Subtitle: 'Long-term support',
+    service4Text: 'My support doesn\'t stop at installation. I help you set up secure electronic archiving for 7 years, as required by law, and I advise you to maximize the available financial aid.',
+    benefitsTitle: 'Transform this Obligation into a Real Opportunity',
+    benefitsIntro: 'Beyond simple compliance, the switch to electronic invoicing is a performance lever for your company.',
+    benefit1Title: 'Save time',
+    benefit1Text: 'Reduce your invoice processing time by 30%.',
+    benefit2Title: 'Make savings',
+    benefit2Text: 'Reduce your printing, sending and archiving costs by 50% to 70%.',
+    benefit3Title: 'Improve your cash flow',
+    benefit3Text: 'Benefit from real-time tracking and automated reminders to reduce payment delays.',
+    benefit4Title: 'Take advantage of tax benefits',
+    benefit4Text: 'Benefit from a 20% deduction for digital investment and up to 120% on software costs (2024-2027).',
+    ctaTitle: 'Let\'s Discuss Your Project Over Coffee',
+    ctaDescription: 'Uncertainty is the main obstacle to action. That\'s why I offer you 30 minutes of free consultation to assess your specific situation.',
+    ctaBenefitsTitle: 'During this appointment, we will:',
+    ctaBenefit1: 'Assess your current level of preparation',
+    ctaBenefit2: 'Sketch out the first steps of your transition plan',
+    ctaNote: 'This exchange is without commitment and aims only to bring you clarity.',
+    ctaButton: 'I book my free 30-minute assessment',
+    faqTitle: 'Frequently Asked Questions',
+    faq1Question: '1. Is my company really required to switch to electronic invoicing?',
+    faq1Answer: 'The obligation concerns all VAT-registered companies for their B2B transactions. Only micro-enterprises with less than €25,000 in turnover and performing only VAT-exempt operations can be exempted under strict conditions.',
+    faq2Question: '2. Is sending invoices in PDF by email sufficient?',
+    faq2Answer: 'No. From 2026, a simple PDF will no longer be considered a compliant electronic invoice. The law requires the use of a structured format (XML UBL) via the Peppol network to guarantee automated processing.',
+    faq3Question: '3. What software is compatible in Belgium?',
+    faq3Answer: 'Many Belgian solutions like Accountable, Billit, Trustup Pro, Odoo or Yuki are already compatible with Peppol. The choice depends on the size of your company, your needs and your budget.',
+    faq4Question: '4. What is the cost of this transition?',
+    faq4Answer: 'Costs vary according to the chosen solution. However, significant tax benefits exist to lighten the investment, notably a 120% deduction on software costs for SMEs and a 20% deduction for digital investment.',
+  },
+  contactForm: {
+    title: 'Contact me for your free diagnostic',
+    description: 'Fill out the form below and I will get back to you within 24h to schedule your free 30-minute consultation.',
+    nameLabel: 'Full name',
+    namePlaceholder: 'Your full name',
+    emailLabel: 'Email',
+    emailPlaceholder: 'your@email.com',
+    companyLabel: 'Company',
+    companyPlaceholder: 'Your company name',
+    phoneLabel: 'Phone',
+    phonePlaceholder: '+32 4XX XX XX XX',
+    messageLabel: 'Message',
+    messagePlaceholder: 'Describe your current situation and your questions about the transition to Peppol...',
+    required: '*',
+    submitLoading: 'Sending...',
+    submitButton: 'Send message',
+    successMessage: 'Your message has been sent successfully! I will get back to you as soon as possible.',
+    errorMessage: 'An error occurred. Please try again.',
+    connectionError: 'A connection error occurred. Please try again.',
   },
 };
 

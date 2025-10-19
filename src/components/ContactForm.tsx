@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
 import styles from './ContactForm.module.css';
+import { useI18n } from '../i18n/LanguageProvider';
 
 interface FormData {
   name: string;
@@ -18,6 +19,7 @@ interface FormStatus {
 }
 
 const ContactForm: React.FC = () => {
+  const { t } = useI18n();
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -54,7 +56,7 @@ const ContactForm: React.FC = () => {
       if (response.ok) {
         setStatus({ 
           type: 'success', 
-          message: 'Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.' 
+          message: t.contactForm.successMessage
         });
         setFormData({
           name: '',
@@ -66,13 +68,13 @@ const ContactForm: React.FC = () => {
       } else {
         setStatus({ 
           type: 'error', 
-          message: result.error || 'Une erreur est survenue. Veuillez réessayer.' 
+          message: result.error || t.contactForm.errorMessage
         });
       }
     } catch (error) {
       setStatus({ 
         type: 'error', 
-        message: 'Une erreur de connexion est survenue. Veuillez réessayer.' 
+        message: t.contactForm.connectionError
       });
     }
   };
@@ -80,9 +82,9 @@ const ContactForm: React.FC = () => {
   return (
     <div className={styles.contactFormContainer}>
       <div className={styles.formHeader}>
-        <h2>Contactez-moi pour votre diagnostic gratuit</h2>
+        <h2>{t.contactForm.title}</h2>
         <p>
-          Remplissez le formulaire ci-dessous et je vous recontacterai dans les 24h pour planifier votre consultation gratuite de 30 minutes.
+          {t.contactForm.description}
         </p>
       </div>
 
@@ -90,7 +92,7 @@ const ContactForm: React.FC = () => {
         <div className={styles.formRow}>
           <div className={styles.formGroup}>
             <label htmlFor="name" className={styles.label}>
-              Nom complet <span className={styles.required}>*</span>
+              {t.contactForm.nameLabel} <span className={styles.required}>{t.contactForm.required}</span>
             </label>
             <input
               type="text"
@@ -100,13 +102,13 @@ const ContactForm: React.FC = () => {
               onChange={handleChange}
               required
               className={styles.input}
-              placeholder="Votre nom complet"
+              placeholder={t.contactForm.namePlaceholder}
             />
           </div>
 
           <div className={styles.formGroup}>
             <label htmlFor="email" className={styles.label}>
-              Email <span className={styles.required}>*</span>
+              {t.contactForm.emailLabel} <span className={styles.required}>{t.contactForm.required}</span>
             </label>
             <input
               type="email"
@@ -116,7 +118,7 @@ const ContactForm: React.FC = () => {
               onChange={handleChange}
               required
               className={styles.input}
-              placeholder="votre@email.com"
+              placeholder={t.contactForm.emailPlaceholder}
             />
           </div>
         </div>
@@ -124,7 +126,7 @@ const ContactForm: React.FC = () => {
         <div className={styles.formRow}>
           <div className={styles.formGroup}>
             <label htmlFor="company" className={styles.label}>
-              Entreprise
+              {t.contactForm.companyLabel}
             </label>
             <input
               type="text"
@@ -133,13 +135,13 @@ const ContactForm: React.FC = () => {
               value={formData.company}
               onChange={handleChange}
               className={styles.input}
-              placeholder="Nom de votre entreprise"
+              placeholder={t.contactForm.companyPlaceholder}
             />
           </div>
 
           <div className={styles.formGroup}>
             <label htmlFor="phone" className={styles.label}>
-              Téléphone
+              {t.contactForm.phoneLabel}
             </label>
             <input
               type="tel"
@@ -148,14 +150,14 @@ const ContactForm: React.FC = () => {
               value={formData.phone}
               onChange={handleChange}
               className={styles.input}
-              placeholder="+32 4XX XX XX XX"
+              placeholder={t.contactForm.phonePlaceholder}
             />
           </div>
         </div>
 
         <div className={styles.formGroup}>
           <label htmlFor="message" className={styles.label}>
-            Message <span className={styles.required}>*</span>
+            {t.contactForm.messageLabel} <span className={styles.required}>{t.contactForm.required}</span>
           </label>
           <textarea
             id="message"
@@ -165,7 +167,7 @@ const ContactForm: React.FC = () => {
             required
             rows={6}
             className={styles.textarea}
-            placeholder="Décrivez votre situation actuelle et vos questions concernant la transition vers Peppol..."
+            placeholder={t.contactForm.messagePlaceholder}
           />
         </div>
 
@@ -177,12 +179,12 @@ const ContactForm: React.FC = () => {
           {status.type === 'loading' ? (
             <>
               <div className={styles.spinner}></div>
-              Envoi en cours...
+              {t.contactForm.submitLoading}
             </>
           ) : (
             <>
               <Send size={20} />
-              Envoyer le message
+              {t.contactForm.submitButton}
             </>
           )}
         </button>
