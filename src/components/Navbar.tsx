@@ -37,7 +37,7 @@ const Navbar = () => {
 
         <ul className={styles.navLinks}>
           {/* Liens qui font défiler la page d'accueil */}
-          <li><Link href="/#home">{t.nav.home}</Link></li>
+          <li><Link href="/">{t.nav.home}</Link></li>
           <li><Link href="/#approach">{t.nav.approach}</Link></li>
           <li><Link href="/#services">{t.nav.services}</Link></li>
           <li><Link href="/#case-study">{t.nav.results}</Link></li>
@@ -57,7 +57,7 @@ const Navbar = () => {
           aria-label="Mobile navigation"
         >
           <ul>
-            <li><Link href="/#home" onClick={() => setIsMenuOpen(false)}>{t.nav.home}</Link></li>
+            <li><Link href="/" onClick={() => setIsMenuOpen(false)}>{t.nav.home}</Link></li>
             <li><Link href="/#approach" onClick={() => setIsMenuOpen(false)}>{t.nav.approach}</Link></li>
             <li><Link href="/#services" onClick={() => setIsMenuOpen(false)}>{t.nav.services}</Link></li>
             <li><Link href="/#case-study" onClick={() => setIsMenuOpen(false)}>{t.nav.results}</Link></li>

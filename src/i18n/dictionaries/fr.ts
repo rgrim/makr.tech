@@ -99,6 +99,12 @@ export const fr: Translations = {
     title: "Le billet d'humeur de Romain",
     subtitle: "Réflexions sur la technologie, la stratégie d'entreprise et la résolution de problèmes complexes.",
   },
+  peppolCampaign: {
+    urgencyBadge: 'Échéance 2026',
+    mainText: 'obligatoire dès le 1er janvier 2026.',
+    highlight: 'Facturation Électronique Peppol',
+    ctaText: 'Découvrir mon accompagnement',
+  },
 };
 
 

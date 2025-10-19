@@ -1,0 +1,129 @@
+/* PeppolCampaign.module.css - Compact marketing campaign styles */
+
+.campaign {
+  background: linear-gradient(135deg, var(--mediterranean-blue), var(--deep-blue));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  margin-top: 100px; /* Account for fixed navbar */
+  animation: fadeInUp 1s ease-out;
+}
+
+.campaign::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, rgba(244, 162, 89, 0.15), transparent);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.campaignContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.campaignContent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  animation: fadeInUp 1.2s ease-out 0.2s both;
+}
+
+.urgencyBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(216, 67, 21, 0.2);
+  border: 1px solid rgba(216, 67, 21, 0.4);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  flex-shrink: 0;
+}
+
+.campaignText {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.highlight {
+  color: var(--sun-gold);
+  font-weight: 700;
+}
+
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--sun-gold);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid rgba(244, 162, 89, 0.3);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  background: rgba(244, 162, 89, 0.1);
+  font-size: 0.9rem;
+}
+
+.ctaLink:hover {
+  background: rgba(244, 162, 89, 0.2);
+  border-color: rgba(244, 162, 89, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .campaign {
+    padding: 0.6rem 1rem;
+    margin-top: 80px;
+  }
+  
+  .campaignContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  
+  .campaignText {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    font-size: 0.95rem;
+  }
+  
+  .urgencyBadge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+  }
+  
+  .ctaLink {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .campaign {
+    padding: 0.5rem 0.8rem;
+  }
+  
+  .campaignText {
+    font-size: 0.9rem;
+  }
+}

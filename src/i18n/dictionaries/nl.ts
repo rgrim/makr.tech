@@ -98,6 +98,12 @@ export const nl: Translations = {
     title: 'Romain\'s opiniestuk',
     subtitle: 'Reflecties over technologie, bedrijfsstrategie en het oplossen van complexe problemen.',
   },
+  peppolCampaign: {
+    urgencyBadge: 'Deadline 2026',
+    mainText: 'verplicht vanaf 1 januari 2026.',
+    highlight: 'Elektronische facturering Peppol',
+    ctaText: 'Ontdek mijn begeleiding',
+  },
 };
 
 

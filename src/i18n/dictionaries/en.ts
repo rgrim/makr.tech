@@ -96,6 +96,12 @@ export type Translations = {
     title: string;
     subtitle: string;
   };
+  peppolCampaign: {
+    urgencyBadge: string;
+    mainText: string;
+    highlight: string;
+    ctaText: string;
+  };
 };
 
 export const en: Translations = {
@@ -195,6 +201,12 @@ export const en: Translations = {
   blog: {
     title: "Romain's Opinion Piece",
     subtitle: 'Reflections on technology, business strategy, and solving complex problems.',
+  },
+  peppolCampaign: {
+    urgencyBadge: '2026 Deadline',
+    mainText: 'mandatory from January 1st, 2026.',
+    highlight: 'Electronic Invoicing Peppol',
+    ctaText: 'Discover my support',
   },
 };
 

@@ -5,9 +5,11 @@ import Services from "@/components/Services";
 import CaseStudy from "@/components/CaseStudy";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
+import PeppolCampaign from "@/components/PeppolCampaign";
 export default function Home() {
   return (
     <>
+    <PeppolCampaign />
     <Hero />
     <div className="mosaic-divider"></div> 
     <Approach />
