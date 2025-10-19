@@ -73,6 +73,9 @@
     font-weight: 600;
     position: relative;
     padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .caseSection h3::before {

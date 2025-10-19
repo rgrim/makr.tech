@@ -139,3 +139,18 @@
     color: var(--terracotta);
     font-weight: 600;
 }
+
+.loading {
+    text-align: center;
+    padding: 4rem 0;
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+.noPosts {
+    text-align: center;
+    padding: 4rem 0;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    font-style: italic;
+}

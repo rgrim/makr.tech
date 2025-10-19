@@ -97,6 +97,9 @@ export const nl: Translations = {
   blog: {
     title: 'Romain\'s opiniestuk',
     subtitle: 'Reflecties over technologie, bedrijfsstrategie en het oplossen van complexe problemen.',
+    readMore: 'Lees meer →',
+    noPosts: 'Momenteel geen blogberichten beschikbaar.',
+    coverImageAlt: 'Omslagafbeelding voor',
   },
   peppolCampaign: {
     urgencyBadge: 'Deadline 2026',

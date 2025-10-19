@@ -98,6 +98,9 @@ export const fr: Translations = {
   blog: {
     title: "Le billet d'humeur de Romain",
     subtitle: "Réflexions sur la technologie, la stratégie d'entreprise et la résolution de problèmes complexes.",
+    readMore: 'Lire la suite →',
+    noPosts: 'Aucun article de blog disponible pour le moment.',
+    coverImageAlt: 'Image de couverture pour',
   },
   peppolCampaign: {
     urgencyBadge: 'Échéance 2026',

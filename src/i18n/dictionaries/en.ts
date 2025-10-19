@@ -95,6 +95,9 @@ export type Translations = {
   blog: {
     title: string;
     subtitle: string;
+    readMore: string;
+    noPosts: string;
+    coverImageAlt: string;
   };
   peppolCampaign: {
     urgencyBadge: string;
@@ -275,6 +278,9 @@ export const en: Translations = {
   blog: {
     title: "Romain's Opinion Piece",
     subtitle: 'Reflections on technology, business strategy, and solving complex problems.',
+    readMore: 'Read more →',
+    noPosts: 'No blog posts available at the moment.',
+    coverImageAlt: 'Cover image for',
   },
   peppolCampaign: {
     urgencyBadge: '2026 Deadline',

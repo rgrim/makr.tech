@@ -6,6 +6,7 @@ import { urlForImage } from '../../../sanity/lib/image';
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import styles from './Blog.module.css';
 import BlogHeading from './BlogHeading';
+import BlogContent from './BlogContent';
 
 // Définissons le type de données que nous attendons de Sanity
 interface Post {
@@ -36,42 +37,16 @@ async function getPosts() {
   return posts;
 }
 
-// La page est maintenant "async" pour permettre le "await"
+// La page utilise maintenant un serveur component pour récupérer les données
 export default async function BlogIndexPage() {
   const posts = await getPosts();
   
   return (
     <div className={styles.container}>
-    <div className={styles.hero}>
-      <BlogHeading />
-    </div>
-    <div >
-      <div className={styles.postsGrid}>
-        {posts.map((post) => (
-          <Link href={`/blog/${post.slug.current}`} key={post._id} className={styles.postCard}>
-
-            {/* 4. Ajouter le conteneur et l'image */}
-            {post.mainImage?.url && ( // On vérifie si l'image existe
-              <div className={styles.imageContainer}>
-                <Image
-                  src={post.mainImage.url} // On utilise notre fonction pour créer l'URL
-                  alt={`Image de couverture pour ${post.title}`}
-                  fill={true}
-                  className={styles.postImage}
-                />
-              </div>
-            )}
-
-            {/* On enveloppe le texte dans une div pour mieux le styler */}
-            <div className={styles.cardContent}>
-                <h2>{post.title}</h2>
-                <p>{post.excerpt}</p>
-                <span className={styles.readMore}>Lire la suite →</span>
-            </div>
-          </Link>
-        ))}
+      <div className={styles.hero}>
+        <BlogHeading />
       </div>
-    </div>
+      <BlogContent posts={posts} />
     </div>
   );
 }
