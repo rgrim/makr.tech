@@ -463,16 +463,7 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2.5rem;
 }
-.peppolPage .services-grid {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
-}
 
-@media (max-width: 768px) {
-  .peppolPage .services-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 .service-card {
   background: white;
@@ -671,10 +662,7 @@ section {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.about-card:hover {
-  transform: translateX(5px);
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
-}
+
 
 .about-card p {
   color: var(--text-light);

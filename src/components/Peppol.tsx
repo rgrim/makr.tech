@@ -1,5 +1,6 @@
 import React from 'react';
 import DynamicBackground from './DynamicBackground';
+import { Clock, DollarSign, TrendingUp, Building2, Coffee, Check } from 'lucide-react';
 import styles from './Peppol.module.css';
 
 const Peppol: React.FC = () => {
@@ -18,7 +19,10 @@ const Peppol: React.FC = () => {
             Dès le 1er janvier 2026, la facturation électronique structurée devient obligatoire en Belgique pour toutes les entreprises B2B. Ne laissez pas cette échéance complexe devenir un obstacle. Je vous accompagne pour une transition simple, conforme et avantageuse.
           </p>
           <a href="#contact" className="cta-button">
-            <span>☕ Prenez rendez-vous pour votre diagnostic gratuit de 30 min</span>
+            <span style={{display: 'flex', alignItems: 'center'}}>
+              <Coffee size={20} style={{marginRight: '8px'}} />
+              Prenez rendez-vous pour votre diagnostic gratuit de 30 min
+            </span>
           </a>
         </section>
 
@@ -51,7 +55,7 @@ const Peppol: React.FC = () => {
             Je vous propose un accompagnement sur mesure pour naviguer cette réforme en toute sérénité. Mon service s'articule autour de 4 étapes clés pour garantir votre conformité et optimiser vos processus.
           </p>
 
-          <div className="services-grid">
+          <div className={`services-grid ${styles.servicesGridTwoCols}`}>
             <div className="service-card">
               <div className="service-number">01</div>
               <h3>Audit et Diagnostic Complet</h3>
@@ -97,9 +101,11 @@ const Peppol: React.FC = () => {
             Au-delà de la simple conformité, le passage à la facturation électronique est un levier de performance pour votre entreprise.
           </p>
 
-          <div className="pillars-grid">
+          <div className={`pillars-grid ${styles.pillarsGridFourCols}`}>
             <div className="pillar-card">
-              <div className="pillar-icon">⏱️</div>
+              <div className="pillar-icon">
+                <Clock size={32} />
+              </div>
               <h3>Gagnez du temps</h3>
               <p>
                 Réduisez le temps de traitement de vos factures de 30%.
@@ -107,7 +113,9 @@ const Peppol: React.FC = () => {
             </div>
 
             <div className="pillar-card">
-              <div className="pillar-icon">💰</div>
+              <div className="pillar-icon">
+                <DollarSign size={32} />
+              </div>
               <h3>Faites des économies</h3>
               <p>
                 Diminuez vos coûts d'impression, d'envoi et d'archivage de 50% à 70%.
@@ -115,7 +123,9 @@ const Peppol: React.FC = () => {
             </div>
 
             <div className="pillar-card">
-              <div className="pillar-icon">📈</div>
+              <div className="pillar-icon">
+                <TrendingUp size={32} />
+              </div>
               <h3>Améliorez votre trésorerie</h3>
               <p>
                 Profitez d'un suivi en temps réel et de relances automatisées pour réduire les retards de paiement.
@@ -123,7 +133,9 @@ const Peppol: React.FC = () => {
             </div>
 
             <div className="pillar-card">
-              <div className="pillar-icon">🏛️</div>
+              <div className="pillar-icon">
+                <Building2 size={32} />
+              </div>
               <h3>Profitez d'aides fiscales</h3>
               <p>
                 Bénéficiez d'une déduction de 20% pour investissement numérique et jusqu'à 120% sur les frais de logiciels (2024-2027).
@@ -139,13 +151,22 @@ const Peppol: React.FC = () => {
             L'incertitude est le principal frein à l'action. C'est pourquoi je vous offre <strong>30 minutes de consultation gratuite</strong> pour faire le point sur votre situation spécifique.
           </p>
 
-          <div className={styles.ctaSteps}>
-            <p className={styles.ctaStepsTitle}>Pendant ce rendez-vous, nous allons :</p>
-            <ol className={styles.ctaStepsList}>
-              <li>Évaluer votre niveau de préparation actuel.</li>
-              <li>Identifier les solutions logicielles pertinentes pour votre activité.</li>
-              <li>Esquisser les premières étapes de votre plan de transition.</li>
-            </ol>
+          <div className={styles.benefitsList}>
+            <h3 className={styles.benefitsTitle}>Pendant ce rendez-vous, nous allons :</h3>
+            <div className={styles.benefitsItems}>
+              <div className={styles.benefitItem}>
+                <div className={styles.benefitIcon}>
+                  <Check size={16} />
+                </div>
+                <span>Évaluer votre niveau de préparation actuel</span>
+              </div>
+              <div className={styles.benefitItem}>
+                <div className={styles.benefitIcon}>
+                  <Check size={16} />
+                </div>
+                <span>Esquisser les premières étapes de votre plan de transition</span>
+              </div>
+            </div>
           </div>
 
           <p className={styles.ctaNote}>
@@ -153,7 +174,10 @@ const Peppol: React.FC = () => {
           </p>
 
           <a href="#contact" className="cta-button">
-            <span>☕ Je réserve mon état des lieux gratuit de 30 minutes</span>
+            <span style={{display: 'flex', alignItems: 'center'}}>
+              <Coffee size={20} style={{marginRight: '8px'}} />
+              Je réserve mon état des lieux gratuit de 30 minutes
+            </span>
           </a>
         </section>
 
@@ -162,29 +186,29 @@ const Peppol: React.FC = () => {
           <h2>Questions Fréquentes</h2>
 
           <div className="about-content">
-            <div className="about-card">
-              <h3>1. Mon entreprise est-elle vraiment obligée de passer à la facturation électronique ?</h3>
+            <div className={`about-card ${styles.faqCard}`}>
+              <h3 className={styles.faqTitle}>1. Mon entreprise est-elle vraiment obligée de passer à la facturation électronique ?</h3>
               <p>
                 L'obligation concerne toutes les entreprises assujetties à la TVA pour leurs transactions B2B. Seules les micro-entreprises réalisant moins de 25 000 € de chiffre d'affaires et effectuant uniquement des opérations exonérées de TVA peuvent être exemptées sous conditions strictes.
               </p>
             </div>
 
-            <div className="about-card">
-              <h3>2. Est-ce que l'envoi de factures en PDF par e-mail est suffisant ?</h3>
+            <div className={`about-card ${styles.faqCard}`}>
+              <h3 className={styles.faqTitle}>2. Est-ce que l'envoi de factures en PDF par e-mail est suffisant ?</h3>
               <p>
                 Non. À partir de 2026, un simple PDF ne sera plus considéré comme une facture électronique conforme. La loi impose l'utilisation d'un format structuré (XML UBL) via le réseau Peppol pour garantir un traitement automatisé.
               </p>
             </div>
 
-            <div className="about-card">
-              <h3>3. Quels sont les logiciels compatibles en Belgique ?</h3>
+            <div className={`about-card ${styles.faqCard}`}>
+              <h3 className={styles.faqTitle}>3. Quels sont les logiciels compatibles en Belgique ?</h3>
               <p>
                 De nombreuses solutions belges comme Accountable, Billit, Trustup Pro, Odoo ou Yuki sont déjà compatibles avec Peppol. Le choix dépend de la taille de votre entreprise, de vos besoins et de votre budget.
               </p>
             </div>
 
-            <div className="about-card">
-              <h3>4. Quel est le coût de cette transition ?</h3>
+            <div className={`about-card ${styles.faqCard}`}>
+              <h3 className={styles.faqTitle}>4. Quel est le coût de cette transition ?</h3>
               <p>
                 Les coûts varient selon la solution choisie. Cependant, des aides fiscales importantes existent pour alléger l'investissement, notamment une déduction de 120% sur les frais de logiciels pour les PME et une déduction de 20% pour l'investissement numérique.
               </p>

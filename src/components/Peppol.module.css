@@ -99,14 +99,32 @@
 }
 
 /* Override pour 2 colonnes dans la page Peppol */
-.services-grid {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
+.servicesGridTwoCols {
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 2.5rem !important;
 }
 
 @media (max-width: 768px) {
-  .peppolPage .services-grid {
-    grid-template-columns: 1fr;
+  .servicesGridTwoCols {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Override pour 4 colonnes dans la page Peppol */
+.pillarsGridFourCols {
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 2.5rem !important;
+}
+
+@media (max-width: 1024px) {
+  .pillarsGridFourCols {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .pillarsGridFourCols {
+    grid-template-columns: 1fr !important;
   }
 }
 
@@ -131,36 +149,76 @@
   line-height: 1.7;
 }
 
-.ctaSteps {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 40px;
-  border-radius: 20px;
+.benefitsList {
   margin: 40px 0;
-  max-width: 600px;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.ctaStepsTitle {
-  font-size: 1.2rem;
+.benefitsTitle {
+  font-size: 1.4rem;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.95);
 }
 
-.ctaStepsList {
-  text-align: left;
+.benefitsItems {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.benefitItem:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(5px);
+}
+
+.benefitIcon {
+  width: 24px;
+  height: 24px;
+  background: #0D4F8B;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.benefitItem span {
   font-size: 1.1rem;
-  line-height: 1.7;
-}
-
-.ctaStepsList li {
-  margin-bottom: 10px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .ctaNote {
   font-size: 1.1rem;
   margin: 30px 0;
   opacity: 0.9;
+  text-align: center;
+}
+
+/* Style spécifique pour les titres FAQ */
+.faqTitle {
+  font-size: 1.6rem !important;
+  color: var(--mediterranean-blue) !important;
+  margin-bottom: 1rem !important;
+  font-weight: 700 !important;
 }
 
 /* Responsive Design */
@@ -176,3 +234,9 @@
     padding: 20px;
   }
 }
+/* Style spécifique pour les cartes FAQ */
+.faqCard {
+    border-left: 4px solid #0D4F8B !important;
+    box-shadow: 0 4px 20px rgba(13, 79, 139, 0.1) !important;
+}
+
