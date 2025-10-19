@@ -1,0 +1,245 @@
+/* ContactForm.module.css - Styles for the contact form */
+
+.contactFormContainer {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  padding: 3rem 2.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.contactFormContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--terracotta), var(--warm-orange));
+}
+
+.formHeader {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.formHeader h2 {
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  color: var(--mediterranean-blue);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.formHeader p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-weight: 600;
+  color: var(--mediterranean-blue);
+  font-size: 0.95rem;
+}
+
+.required {
+  color: var(--terracotta);
+}
+
+.input,
+.textarea {
+  padding: 1rem 1.2rem;
+  border: 2px solid var(--soft-gray);
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  color: var(--text-dark);
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--terracotta);
+  box-shadow: 0 0 0 3px rgba(216, 67, 21, 0.1);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--text-light);
+  opacity: 0.7;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.2rem 2.5rem;
+  background: linear-gradient(135deg, var(--terracotta), var(--warm-orange));
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(216, 67, 21, 0.3);
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.submitButton::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.submitButton:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(216, 67, 21, 0.4);
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submitButton:disabled:hover {
+  transform: none;
+  box-shadow: 0 4px 15px rgba(216, 67, 21, 0.3);
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.statusMessage {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 500;
+  margin-top: 1rem;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.statusMessage.success {
+  background: rgba(122, 132, 80, 0.1);
+  color: var(--olive-green);
+  border: 1px solid rgba(122, 132, 80, 0.2);
+}
+
+.statusMessage.error {
+  background: rgba(216, 67, 21, 0.1);
+  color: var(--terracotta);
+  border: 1px solid rgba(216, 67, 21, 0.2);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contactFormContainer {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .formHeader h2 {
+    font-size: 1.6rem;
+  }
+
+  .formHeader p {
+    font-size: 1rem;
+  }
+
+  .submitButton {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactFormContainer {
+    padding: 1.5rem 1rem;
+    margin: 0.5rem;
+  }
+
+  .input,
+  .textarea {
+    padding: 0.8rem 1rem;
+  }
+
+  .submitButton {
+    padding: 0.8rem 1.5rem;
+  }
+}

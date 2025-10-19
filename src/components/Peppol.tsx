@@ -1,5 +1,6 @@
 import React from 'react';
 import DynamicBackground from './DynamicBackground';
+import ContactForm from './ContactForm';
 import { Clock, DollarSign, TrendingUp, Building2, Coffee, Check } from 'lucide-react';
 import styles from './Peppol.module.css';
 
@@ -179,6 +180,11 @@ const Peppol: React.FC = () => {
               Je réserve mon état des lieux gratuit de 30 minutes
             </span>
           </a>
+        </section>
+
+        {/* Section Contact Form */}
+        <section id="contact" className={styles.contactFormSection}>
+          <ContactForm />
         </section>
 
         {/* Section FAQ */}
