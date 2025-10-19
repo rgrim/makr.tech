@@ -2,6 +2,7 @@
 'use client';
 import styles from './CaseStudy.module.css';
 import { useI18n } from '@/i18n/LanguageProvider';
+import { Target, Wrench, Rocket } from 'lucide-react';
 
 const CaseStudy = () => {
   const { t } = useI18n();
@@ -12,18 +13,18 @@ const CaseStudy = () => {
 
       <div className={styles.caseStudyContent}>
         <div className={styles.caseSection}>
-          <h3>{t.caseStudy.problemTitle}</h3>
+          <h3><Target size={20} style={{ marginRight: '0.5rem', verticalAlign: 'middle' }} />{t.caseStudy.problemTitle}</h3>
           <p>{t.caseStudy.problemText1}</p>
         </div>
 
         <div className={styles.caseSection}>
-          <h3>{t.caseStudy.actionTitle}</h3>
+          <h3><Wrench size={20} style={{ marginRight: '0.5rem', verticalAlign: 'middle' }} />{t.caseStudy.actionTitle}</h3>
           <p>{t.caseStudy.actionText1}</p>
           <p>{t.caseStudy.actionText2}</p>
         </div>
 
         <div className={`${styles.caseSection} ${styles.caseResult}`}>
-          <h3>{t.caseStudy.resultTitle}</h3>
+          <h3><Rocket size={20} style={{ marginRight: '0.5rem', verticalAlign: 'middle' }} />{t.caseStudy.resultTitle}</h3>
           <p>{t.caseStudy.resultIntro}</p>
           <div className={styles.stats}>
             <div className={styles.statItem}>

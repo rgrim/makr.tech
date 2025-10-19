@@ -3,11 +3,20 @@
     background: linear-gradient(135deg, var(--terracotta), var(--warm-orange));
     color: white;
     border-radius: 25px;
-    padding: 5rem 2rem;
+    padding: 5rem 1.5rem;
     text-align: center;
     position: relative;
     overflow: hidden;
-    margin-bottom:4rem;
+    margin-bottom: 4rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+@media (min-width: 768px) {
+    .contact {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .contact::before {
@@ -38,16 +47,19 @@
 
 .contactEmail {
     display: inline-block;
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 3vw, 1.3rem);
     color: white;
     text-decoration: none;
     font-weight: 600;
-    padding: 1rem 2.5rem;
+    padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2.5rem);
     border: 2px solid white;
     border-radius: 50px;
     transition: all 0.3s ease;
     margin-top: 1rem;
     background: transparent;
+    max-width: calc(100% - 2rem);
+    word-break: break-all;
+    text-align: center;
 }
 
 .contactEmail:hover {

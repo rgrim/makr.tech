@@ -2,10 +2,19 @@
 .caseStudy {
     background: linear-gradient(135deg, var(--mediterranean-blue), var(--deep-blue));
     color: white;
-    border-radius: 25px;
-    padding: 5rem 2.5rem;
+    border-radius: 1.5rem; /* rounded-2xl equivalent */
+    padding: 5rem 1.5rem;
     position: relative;
     overflow: hidden;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+@media (min-width: 768px) {
+    .caseStudy {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .caseStudy::before {
@@ -33,39 +42,70 @@
 }
 
 .caseStudyContent {
-    display: grid;
-    gap: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
 .caseSection {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    border-radius: 15px;
-    border-left: 4px solid var(--sun-gold);
+    padding: 0;
+    border-radius: 0;
+    background: none;
+    backdrop-filter: none;
+    border-left: none;
+    position: relative;
+}
+
+.caseSection:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -1.5rem;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(244, 162, 89, 0.3), transparent);
 }
 
 .caseSection h3 {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
     color: var(--sun-gold);
+    font-weight: 600;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.caseSection h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 60%;
+    background: var(--sun-gold);
+    border-radius: 2px;
 }
 
 .caseSection p {
     line-height: 1.8;
     font-size: 1.1rem;
+    margin-bottom: 1rem;
 }
 
 .caseResult {
-    background: rgba(244, 162, 89, 0.2);
-    border-left-color: var(--golden-yellow);
+    background: none;
+    border-left-color: none;
 }
 
 .stats {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    margin-top: 1.5rem;
+    margin: 2rem 0;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(244, 162, 89, 0.2);
+    border-bottom: 1px solid rgba(244, 162, 89, 0.2);
 }
 
 .statItem {

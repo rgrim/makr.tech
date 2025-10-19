@@ -65,9 +65,40 @@ const Navbar = () => {
             <li><Link href="/blog" onClick={() => setIsMenuOpen(false)}>{t.nav.blog}</Link></li>
             <li><Link href="/#contact" onClick={() => setIsMenuOpen(false)}>{t.nav.contact}</Link></li>
           </ul>
+          
+          {/* Language switcher in mobile menu */}
+          <div className={styles.mobileLangSwitcher}>
+            <div className={styles.mobileLangLabel}>Language / Langue / Taal:</div>
+            <div className={styles.mobileLangButtons}>
+              <button
+                type="button"
+                onClick={() => {
+                  setLocale('en');
+                  setIsMenuOpen(false);
+                }}
+                className={locale === 'en' ? styles.mobileLangActive : ''}
+              >English</button>
+              <button
+                type="button"
+                onClick={() => {
+                  setLocale('fr');
+                  setIsMenuOpen(false);
+                }}
+                className={locale === 'fr' ? styles.mobileLangActive : ''}
+              >Français</button>
+              <button
+                type="button"
+                onClick={() => {
+                  setLocale('nl');
+                  setIsMenuOpen(false);
+                }}
+                className={locale === 'nl' ? styles.mobileLangActive : ''}
+              >Nederlands</button>
+            </div>
+          </div>
         </div>
         
-        {/* Language switcher */}
+        {/* Language switcher - Desktop buttons */}
         <div className={styles.langSwitcher}>
           <button
             type="button"
@@ -88,6 +119,7 @@ const Navbar = () => {
             className={locale === 'nl' ? styles.langActive : ''}
           >NL</button>
         </div>
+
       </div>
     </nav>
   );

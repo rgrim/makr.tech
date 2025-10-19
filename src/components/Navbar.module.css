@@ -5,20 +5,25 @@
     top: 0;
     left: 0;
     right: 0;
+    width: 100%;
+    max-width: 100vw;
     background: rgba(250, 248, 245, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 1rem;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
     animation: fadeIn 1s ease-out;
+    box-sizing: border-box;
 }
 
 .navContainer {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .logo {
@@ -71,9 +76,19 @@
 /* Responsive: keep logo visible, collapse links on small screens */
 @media (max-width: 768px) {
     .navContainer {
-        gap: 0.5rem;
+        gap: 0.25rem;
+        justify-content: space-between;
+        align-items: center;
     }
     .navLinks { display: none; }
+    .logo {
+        flex-shrink: 0;
+        max-width: 70px;
+    }
+    .logo img {
+        width: 60px;
+        height: auto;
+    }
 }
 
 /* Burger button */
@@ -115,6 +130,54 @@
     font-weight: 600;
 }
 
+/* Mobile language switcher in menu */
+.mobileLangSwitcher {
+    padding: 1rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    margin-top: 1rem;
+}
+
+.mobileLangLabel {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+.mobileLangButtons {
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+}
+
+.mobileLangButtons button {
+    background: transparent;
+    border: 1px solid rgba(0,0,0,0.15);
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    transition: all 0.2s ease;
+    flex: 1;
+    flex-grow: 0;
+    flex-basis: content;
+    min-width: 0;
+}
+
+.mobileLangButtons button:hover {
+    border-color: var(--mediterranean-blue);
+    color: var(--mediterranean-blue);
+}
+
+.mobileLangActive {
+    background: var(--mediterranean-blue) !important;
+    color: white !important;
+    border-color: var(--mediterranean-blue) !important;
+    font-weight: 700 !important;
+}
+
 @media (max-width: 768px) {
     .menuButton { display: inline-block; }
     .mobileMenu {
@@ -135,18 +198,76 @@
 .langSwitcher {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-left: 1rem;
+    gap: 0.25rem;
+    margin-left: 0.5rem;
+    flex-shrink: 0;
 }
 .langSwitcher button {
     background: transparent;
     border: 1px solid rgba(0,0,0,0.15);
-    padding: 0.25rem 0.5rem;
-    border-radius: 6px;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 600;
+    min-width: 28px;
+    transition: all 0.2s ease;
+}
+.langSwitcher button:hover {
+    border-color: var(--mediterranean-blue);
+    color: var(--mediterranean-blue);
 }
 .langActive {
-    background: var(--terracotta);
-    color: white;
-    border-color: var(--terracotta);
+    background: var(--mediterranean-blue);
+    
+    border-color: var(--mediterranean-blue);
+    font-weight: 700;
+}
+
+
+/* Mobile responsive adjustments for language switcher */
+@media (max-width: 768px) {
+    .langSwitcher {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .navContainer {
+        gap: 0.2rem;
+        padding: 0 0.5rem;
+    }
+    .logo img {
+        width: 50px;
+    }
+    .mobileLangButtons {
+        gap: 0.2rem;
+    }
+    .mobileLangButtons button {
+        padding: 0.25rem 0.4rem;
+        font-size: 0.7rem;
+    }
+}
+
+/* Extra small screens - prevent any overflow */
+@media (max-width: 360px) {
+    .nav {
+        padding: 0.75rem 0.5rem;
+    }
+    .navContainer {
+        gap: 0.1rem;
+    }
+    .logo img {
+        width: 45px;
+    }
+    .mobileLangButtons {
+        gap: 0.15rem;
+    }
+    .mobileLangButtons button {
+        padding: 0.2rem 0.3rem;
+        font-size: 0.65rem;
+    }
+    .mobileLangLabel {
+        font-size: 0.75rem;
+    }
 }
